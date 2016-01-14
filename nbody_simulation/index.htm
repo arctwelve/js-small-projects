@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="css/style.css">
     
 </head>
-<body>
+<body onload = "new NBodySystem()">
+	
     <canvas id="myCanvas" resize></canvas>
-    <script data-main="js/app/main" src="js/lib/require.js"></script>
+	
+    <script src="js/lib/paper.js"></script>
+    <script src="js/app/CircleBody.js"></script>
+    <script src="js/app/NBodySystem.js"></script>
+    <script src="js/app/ForceAccumulator.js"></script>
+    <script src="js/strategies/OrbitStrategy.js"></script>
+    <script src="js/strategies/CarpetStrategy.js"></script>
+    <script src="js/strategies/SpiralStrategy.js"></script>
 </body>
 </html>
