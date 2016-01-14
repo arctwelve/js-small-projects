@@ -36,7 +36,7 @@ define(function (require) {
  * NBodySystem is a simple top level class that has three simple, decoupled responsibilities:
  * run, draw, and exectute strategy. 
  * 
- * Notice that at no point are *how* anything is run, drawn, or what exact strategy
+ * Notice that at no point is *how* anything is run, drawn, or what strategy
  * is used. That responsibility is left up to the lower level class implementations.
  * 
  * Alec Cove, 2016
