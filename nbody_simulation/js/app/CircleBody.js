@@ -1,18 +1,15 @@
 "use strict";
 
-
 var CircleBody = function (x, y, r, m, color) {
 
 	this.radius = r;
-	this.mss = m;
+	this.mass = m;
 	this.invMass = 1 / m;
 
-	// current and previous positions
 	this.curr = new Point(x, y);
 	this.prev = new Point(x, y);
 	this.forces = new Point();
 
-	// graphic element, decoupled from math and physics attributes 
 	this.g = new Path.Circle(this.curr, this.radius);
 	this.g.fillColor = color;
 	this.g.strokeColor = color;
@@ -26,12 +23,6 @@ CircleBody.prototype = {
 	}, 
 	set velocity(v) {
 		this.prev = curr.subtract(v);       
-	},
-	get mass() {
-		return this.mss;
-	},
-	set mass(m) {
-		this.mss = m;
 	}
 }
 

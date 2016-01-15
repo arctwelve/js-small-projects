@@ -1,20 +1,15 @@
 "use strict";
 
 
-/*
- * Alec Cove, 2016
- */
 var NBodySystem = function () {
 
-	var canvas = document.getElementById('myCanvas');
-    paper.setup(canvas);
-    paper.install(window);
+	this.initCanvas();
 	
-	this.strategy = new SpiralStrategy();
+	var strategy = new SpiralStrategy();
+	
 	this.accumulator = new ForceAccumulator(strategy);
-	
-	this.bodies = strategy.bodies;
-	this.numBodies = this.bodies.length;
+	this.localizeStrategy(strategy);
+	this.run();
 }
 
 
@@ -22,29 +17,37 @@ NBodySystem.prototype.run = function () {
 
 	var _this = this;
 	view.onFrame = function(event) {
-		_this.integrate();
-		_this.accumulateForces();
 		_this.draw();
+		_this.integrate();
+		_this.accumulator.accumulateForces();
 	}    
 }
 
 
 NBodySystem.prototype.integrate = function () {
 	for (var i = 0; i < this.numBodies; i++) {
-		var b = this.bodies[i];
 		this.bodies[i].integrate(this.dt2, this.damping);              
 	}       
 }
 
 
-NBodySystem.prototype.accumulateForces = function () {
-	this.accumulator.accumulateForces();
+NBodySystem.prototype.draw = function () {
+	for (var i = 0; i < this.numBodies; i++) {
+		this.bodies[i].draw();                
+	}       
 }
 
 
-NBodySystem.prototype.draw = function () {
-	for (var i = 0; i < this.numBodies; i++) {
-		var b = this.bodies[i];
-		b.draw();                
-	}       
+NBodySystem.prototype.localizeStrategy = function (strat) {
+	this.bodies = strat.bodies;
+	this.numBodies = strat.bodies.length;
+	this.damping = strat.damping;
+	this.dt2 = Math.pow(strat.timeStep, 2);
+}
+
+
+NBodySystem.prototype.initCanvas = function () {
+	var canvas = document.getElementById('myCanvas');
+    paper.setup(canvas);
+    paper.install(window);
 }
