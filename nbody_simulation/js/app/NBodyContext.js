@@ -1,7 +1,7 @@
 "use strict";
 
 
-var NBodySystem = function () {
+var NBodyContext = function () {
 
 	this.initCanvas();
 	
@@ -13,7 +13,7 @@ var NBodySystem = function () {
 }
 
 
-NBodySystem.prototype.run = function () {
+NBodyContext.prototype.run = function () {
 
 	var _this = this;
 	view.onFrame = function(event) {
@@ -24,21 +24,21 @@ NBodySystem.prototype.run = function () {
 }
 
 
-NBodySystem.prototype.integrate = function () {
+NBodyContext.prototype.integrate = function () {
 	for (var i = 0; i < this.numBodies; i++) {
 		this.bodies[i].integrate(this.dt2, this.damping);              
 	}       
 }
 
 
-NBodySystem.prototype.draw = function () {
+NBodyContext.prototype.draw = function () {
 	for (var i = 0; i < this.numBodies; i++) {
 		this.bodies[i].draw();                
 	}       
 }
 
 
-NBodySystem.prototype.localizeStrategy = function (strat) {
+NBodyContext.prototype.localizeStrategy = function (strat) {
 	this.bodies = strat.bodies;
 	this.numBodies = strat.bodies.length;
 	this.damping = strat.damping;
@@ -46,7 +46,7 @@ NBodySystem.prototype.localizeStrategy = function (strat) {
 }
 
 
-NBodySystem.prototype.initCanvas = function () {
+NBodyContext.prototype.initCanvas = function () {
 	var canvas = document.getElementById('myCanvas');
     paper.setup(canvas);
     paper.install(window);
