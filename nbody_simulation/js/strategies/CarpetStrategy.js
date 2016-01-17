@@ -26,7 +26,7 @@ var CarpetStrategy = function () {
 		this.bodies[i] = new CircleBody(p.x, p.y, rad, mass, color);
 
 		p.x += colWidth;
-		if (colCount++ >= newRowAtCols - 1) {
+		if (colCount++ >= newRowAtCol - 1) {
 			p.x = origin.x; 
 			p.y += rowHeight;
 			colCount = 0;
