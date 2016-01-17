@@ -3,15 +3,13 @@
 
 var CarpetStrategy = function () {
 
-	this.timeStep = 1/5;
-	this.gravity = 0.5;
-	this.damping = 0.999;
-	this.numBodies = 156;
+	AbstractStrategy.call(this, {timeStep:1/5, gravity:0.5, damping:0.999});
 	
 	var colWidth = 50;
 	var rowHeight = 50;
-	var newRowAtCols = 12;
-	var origin = this.getCenter(rowHeight, colWidth, newRowAtCols, this.numBodies);
+	var newRowAtCol = 12;
+	this.numBodies = 156;
+	var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, this.numBodies);
 
 	var rad = 2;
 	var mass = 0.1;
@@ -37,7 +35,10 @@ var CarpetStrategy = function () {
 }
 
 
-// any number of helper methods can be called from the constuctor
+CarpetStrategy.prototype = Object.create(AbstractStrategy.prototype);
+CarpetStrategy.prototype.constructor = CarpetStrategy;
+
+
 CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) {
 
 	var c = view.center;
