@@ -3,8 +3,8 @@
 
 var AbstractStrategy = function (args) {
 	
-	if (this instanceof AbstractStrategy) {
-		alert("mubb");
+	if (! (this instanceof AbstractStrategy)) {
+		alert("not abstract");
 	}
 	
 	this.G = args["gravity"];

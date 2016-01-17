@@ -5,9 +5,6 @@ var NBodyContext = function () {
 
 	this.initCanvas();
 	this.strategy = new SpiralStrategy();
-	
-	this.bodies = strategy.getBodies();
-	this.numBodies = strategy.getNumBodies();
 	this.run();
 }
 
@@ -23,8 +20,8 @@ NBodyContext.prototype.run = function () {
 
 
 NBodyContext.prototype.draw = function () {
-	for (var i = 0; i < this.numBodies; i++) {
-		this.bodies[i].draw();                
+	for (var i = 0; i < this.strategy.getNumBodies(); i++) {
+		this.strategy.bodies[i].draw();                
 	}       
 }
 
