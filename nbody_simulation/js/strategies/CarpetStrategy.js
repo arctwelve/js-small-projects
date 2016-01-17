@@ -37,7 +37,7 @@ var CarpetStrategy = function () {
 }
 
 
-// any number of helper methods can be called from the constuctor.
+// any number of helper methods can be called from the constuctor
 CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) {
 
 	var c = view.center;
