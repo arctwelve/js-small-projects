@@ -4,7 +4,7 @@
 var NBodyContext = function () {
 
 	this.initCanvas();
-	this.strategy = new CarpetStrategy();
+	this.strategy = new OrbitStrategy();
 	this.run();
 }
 

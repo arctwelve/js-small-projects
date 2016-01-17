@@ -1,6 +1,7 @@
 "use strict";
 
 
+/** @constructor */
 var AbstractStrategy = function (args) {
 	
 	this.G = args["gravity"];
