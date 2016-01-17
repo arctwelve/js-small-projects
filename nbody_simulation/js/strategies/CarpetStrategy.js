@@ -6,11 +6,11 @@ var CarpetStrategy = function () {
 	this.timeStep = 1/5;
 	this.gravity = 0.5;
 	this.damping = 0.999;
+	this.numBodies = 156;
 	
 	var colWidth = 50;
 	var rowHeight = 50;
 	var newRowAtCols = 12;
-	this.numBodies = 156;
 	var origin = this.getCenter(rowHeight, colWidth, newRowAtCols, this.numBodies);
 
 	var rad = 2;

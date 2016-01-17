@@ -6,9 +6,9 @@ var SpiralStrategy = function () {
 	this.timeStep = 1/20;
 	this.gravity = 0.1;
 	this.damping = 0.999;
-
-	var scale = 20;
 	this.numBodies = 150;
+	
+	var scale = 20;
 	var radCoef = 0.3;
 	var mssCoef = 0.01;
 

@@ -5,9 +5,9 @@ var NBodyContext = function () {
 
 	this.initCanvas();
 	
-	var strategy = new SpiralStrategy();
+	this.strategy = new SpiralStrategy();
+	this.accumulator = new ForceAccumulator(this.strategy);
 	
-	this.accumulator = new ForceAccumulator(strategy);
 	this.localizeStrategy(strategy);
 	this.run();
 }

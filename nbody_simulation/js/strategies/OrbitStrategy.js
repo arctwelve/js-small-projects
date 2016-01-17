@@ -24,4 +24,3 @@ var OrbitStrategy = function () {
 	planetB.addForce(new Point(-100, 0));
 	planetC.addForce(new Point(-800, 0)); 
 }
-  
