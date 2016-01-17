@@ -3,10 +3,6 @@
 
 var AbstractStrategy = function (args) {
 	
-	if (! (this instanceof AbstractStrategy)) {
-		alert("not abstract");
-	}
-	
 	this.G = args["gravity"];
 	this.damping = args["damping"];
 	this.timeStep = args["timeStep"];
