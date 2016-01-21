@@ -3,8 +3,8 @@
 
 var CarpetStrategy = function () {
 
-	AbstractStrategy.call(this, {timeStep:1/5, gravity:0.5, damping:0.999});
-	
+	AbstractStrategy.call(this, {timeStep:1/100, gravity:100, damping:0.999});
+
 	var colWidth = 50;
 	var rowHeight = 50;
 	var newRowAtCol = 12;
@@ -12,7 +12,7 @@ var CarpetStrategy = function () {
 	var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, this.numBodies);
 
 	var rad = 2;
-	var mass = 0.1;
+	var mass = 1;
 	var colorA = "red";
 	var colorB = "orange";
 
@@ -27,11 +27,11 @@ var CarpetStrategy = function () {
 
 		p.x += colWidth;
 		if (colCount++ >= newRowAtCol - 1) {
-			p.x = origin.x; 
+			p.x = origin.x;
 			p.y += rowHeight;
 			colCount = 0;
 		}
-	}   
+	}
 }
 
 

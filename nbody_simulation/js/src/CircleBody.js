@@ -13,16 +13,16 @@ var CircleBody = function (x, y, r, m, color) {
 	this.g = new Path.Circle(this.curr, this.radius);
 	this.g.fillColor = color;
 	this.g.strokeColor = color;
-	this.g.strokeWidth = 1; 
+	this.g.strokeWidth = 1;
 }
 
 
 CircleBody.prototype = {
 	get velocity() {
 		return this.curr.subtract(this.prev);
-	}, 
+	},
 	set velocity(v) {
-		this.prev = curr.subtract(v);       
+		this.prev = curr.subtract(v);
 	}
 }
 

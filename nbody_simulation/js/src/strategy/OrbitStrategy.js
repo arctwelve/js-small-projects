@@ -2,9 +2,9 @@
 
 
 var OrbitStrategy = function () {
-	
+
 	AbstractStrategy.call(this, {timeStep:1/10, gravity:0.5, damping:1.0});
-	
+
 	var c = view.center
 	var star =   new CircleBody(c.x, c.y, 100, 300, 'orange');
 	var planetA = new CircleBody(c.x, c.y + 350, 5, 0.1, 'blue');
@@ -19,7 +19,7 @@ var OrbitStrategy = function () {
 
 	planetA.addForce(new Point(-200, 0));
 	planetB.addForce(new Point(-100, 0));
-	planetC.addForce(new Point(-800, 0)); 
+	planetC.addForce(new Point(-800, 0));
 }
 
 

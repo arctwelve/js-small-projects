@@ -1,10 +1,10 @@
 "use strict";
 
-	
+
 var SpiralStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/20, gravity:0.1, damping:0.999});
-	
+
 	var scale = 20;
 	var radCoef = 0.3;
 	var mssCoef = 0.01;
@@ -25,7 +25,7 @@ var SpiralStrategy = function () {
 		var mss = i * mssCoef + 1;
 		var color = (i % 2 == 0) ? colorA : colorB;
 
-		var p = new CircleBody(c.x, c.y, rad, mss, color);	
+		var p = new CircleBody(c.x, c.y, rad, mss, color);
 		this.bodies.push(p);
 	}
 }
