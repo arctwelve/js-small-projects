@@ -1,12 +1,12 @@
 "use strict";
 
 /*
- * Main object takes care of initializing paper.js' canvas, creates the Clock and handles
- * the program event loop.  
+ * Main object initializes paper.js' canvas, instantiates the Clock and handles the app event loop.  
  */
 var Main = function () {
     this.initCanvas();
     this.clock = new Clock();
+    this.run();
 }
 
 
