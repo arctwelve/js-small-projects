@@ -23,7 +23,7 @@ HandsAngle.prototype.update = function () {
     
     var vA = this.handA.asVector().normalize();
     var vB = this.handB.asVector().normalize();
-    var vC = (vA.add(vB).divide(2)).normalize();
+    var vC = vA.add(vB).divide(2).normalize();
     
     var len = 100;
     var pointA = view.center.add(vA.multiply(len));
