@@ -27,9 +27,6 @@ var HandsAngle = function (handA, handB) {
 }
 
 
-/*  
- * 
- */
 HandsAngle.prototype.update = function () {
 
     var len = 140;

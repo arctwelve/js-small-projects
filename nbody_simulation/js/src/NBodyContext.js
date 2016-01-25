@@ -4,7 +4,7 @@
 var NBodyContext = function () {
 
 	this.initCanvas();
-	this.strategy = new TestStrategy();
+	this.strategy = new OverrideForceStrategy();
 	this.run();
 }
 

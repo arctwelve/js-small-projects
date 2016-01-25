@@ -5,15 +5,15 @@
  * based on the advance of a second propery. The second property is incremented by 
  * an arbitrary rate property. 
  *
- * The clock is not meant to show current time, but to demonstrate angles of the hands
- * that are based on trig based positions - not limited to a floored 360 degree 
- * system with a fixed temporal unit of 60 seconds/minutes and 12
+ * The clock isn't meant to show current time, but to demonstrate angles of the hands
+ * based on vector methods, and variable time units (e.g., a day can be 5 'hours' long
+ * and an hour/minute can be 20 units instead of 60)
  */
 var Clock = function () {
     
     this.rate = 2;
-    this.hoursInCycle = 6;
     this.temporalUnit = 60;
+    this.hoursInCycle = 12;
     
     this.second = 0;
     this.radius = 300;

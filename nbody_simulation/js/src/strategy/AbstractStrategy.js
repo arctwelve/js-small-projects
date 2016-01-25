@@ -37,6 +37,17 @@ AbstractStrategy.prototype.integrate = function () {
 }
 
 
+/*
+ * By default, Stategy classes inherit this accumulateForces method. It's
+ * a simplified in that the distance of the bodies isn't used in the force 
+ * equation -- just gravity and the mass of the bodies. 
+ * 
+ * The OverrideForceStrategy.js shows how you can optionally override
+ * this method and change its behavior. In OverrideForceStrategy.js
+ * the method does use the full universal law of gravity, where the 
+ * distance of the bodies is taken into account.
+ * 
+ */
 AbstractStrategy.prototype.accumulateForces = function () {
 
 	var force = new Point();
