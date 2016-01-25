@@ -3,11 +3,11 @@
 /*
  * Represents a hand on the clock. Used for both hour and minute. 
  */
-var Hand = function (color, width, size) {
+var Hand = function (color, size) {
     
     var p = new Path();
     
-    p.strokeWidth = width;
+    p.strokeWidth = 25;
 	p.strokeColor = color;
     p.strokeCap = 'round';
     

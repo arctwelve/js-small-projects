@@ -11,19 +11,19 @@
  */
 var Clock = function () {
     
-    this.rate = 1;
-    this.hoursInCycle = 12;
+    this.rate = 2;
+    this.hoursInCycle = 6;
     this.temporalUnit = 60;
     
     this.second = 0;
     this.radius = 300;
-    this.strokeWidth = 20;
+    this.strokeWidth = 15;
     
-    this.face = this.drawFace('#999', '#222');
-    this.hourHand = new Hand('#003366', this.strokeWidth, this.radius * 0.5);
-    this.minuteHand = new Hand('#336699', this.strokeWidth, this.radius * 0.8);
+    this.face = this.drawFace('#D1DBBD', '#3E606F');
+    this.hourHand = new Hand('#91AA9D', this.radius * 0.5);
+    this.minuteHand = new Hand('#3E606F ', this.radius * 0.8);
     
-    this.handsAngle = new HandsAngle('#B7CEEC', this.minuteHand, this.hourHand);
+    this.handsAngle = new HandsAngle(this.minuteHand, this.hourHand);
 }
 
 
