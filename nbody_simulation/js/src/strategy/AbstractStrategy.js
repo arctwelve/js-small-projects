@@ -1,7 +1,6 @@
 "use strict";
 
 
-/** @constructor */
 var AbstractStrategy = function (args) {
 
 	this.gravity = args["gravity"];
@@ -38,15 +37,21 @@ AbstractStrategy.prototype.integrate = function () {
 
 
 /*
- * By default, Stategy classes inherit this accumulateForces method. It's
- * a simplified in that the distance of the bodies isn't used in the force 
- * equation -- just gravity and the mass of the bodies. 
+ * By default, classes that extend AbstractStrategy inherit this 
+ * method. It's a simplified accumulator in that the distance of 
+ * the bodies isn't used in the force equation -- just gravity and
+ * the mass of the bodies. 
  * 
- * The OverrideForceStrategy.js shows how you can optionally override
- * this method and change its behavior. In OverrideForceStrategy.js
- * the method does use the full universal law of gravity, where the 
- * distance of the bodies is taken into account.
+ * The DistanceForceStrategy.js class shows how you can optionally 
+ * override this method and change its behavior. In 
+ * DistanceForceStrategy.js the method does use the full universal
+ * law of gravity, where the distance of the bodies is taken into 
+ * account along with mass and gravity.
  * 
+ * Another Strategy class could override this method and do a completely
+ * different technique for accumulating forces. Or you could implement
+ * an n-body strategy that used Barnes-Hut to get better performance.
+ * You could even override it with an empty method. 
  */
 AbstractStrategy.prototype.accumulateForces = function () {
 
