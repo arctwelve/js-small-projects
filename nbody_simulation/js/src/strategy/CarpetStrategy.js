@@ -5,11 +5,11 @@ var CarpetStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/100, gravity:100, damping:0.999});
 
+	var count = 156;
 	var colWidth = 50;
 	var rowHeight = 50;
 	var newRowAtCol = 12;
-	this.numBodies = 156;
-	var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, this.numBodies);
+	var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, count);
 
 	var rad = 2;
 	var mass = 1;
@@ -18,12 +18,11 @@ var CarpetStrategy = function () {
 
 	var colCount = 0;
 	var p = new Point(origin);
-	this.bodies = [this.numBodies];
 
-	for (var i = 0; i < this.numBodies; i++) {
+	for (var i = 0; i < count; i++) {
 
-		var color = (i < this.numBodies / 2) ? colorA : colorB;
-		this.bodies[i] = new CircleBody(p.x, p.y, rad, mass, color);
+		var color = (i < count / 2) ? colorA : colorB;
+		this.addBody(new CircleBody(p.x, p.y, rad, mass, color));
 
 		p.x += colWidth;
 		if (colCount++ >= newRowAtCol - 1) {

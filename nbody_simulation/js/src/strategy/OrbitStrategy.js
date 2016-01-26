@@ -11,11 +11,10 @@ var OrbitStrategy = function () {
 	var planetB = new CircleBody(c.x, c.y - 250, 4, 0.09, 'red');
 	var planetC = new CircleBody(c.x, c.y - 450, 6, 0.5, 'green');
 
-	this.bodies.push(star);
-	this.bodies.push(planetA);
-	this.bodies.push(planetB);
-	this.bodies.push(planetC);
-	this.numBodies = this.bodies.length;
+	this.addBody(star);
+	this.addBody(planetA);
+	this.addBody(planetB);
+	this.addBody(planetC);
 
 	planetA.addForce(new Point(-200, 0));
 	planetB.addForce(new Point(-100, 0));

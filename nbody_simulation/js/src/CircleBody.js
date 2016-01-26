@@ -1,10 +1,10 @@
 "use strict";
 
-var CircleBody = function (x, y, r, m, color) {
+var CircleBody = function (x, y, radius, mass, color) {
 
-	this.radius = r;
-	this.mass = m;
-	this.invMass = 1 / m;
+	this.radius = radius;
+	this.mass = mass;
+	this.invMass = 1 / mass;
 
 	this.curr = new Point(x, y);
 	this.prev = new Point(x, y);

@@ -3,22 +3,23 @@
 
 var DistanceForceStrategy = function () {
 
-	AbstractStrategy.call(this, {timeStep:1/10, gravity:3, damping:1.0});
+	AbstractStrategy.call(this, {timeStep:1/5, gravity:50, damping:0.998});
 
-	var c = view.center
+    var count = 100;
+	var c = view.center;
+	this.addBody(new CircleBody(c.x, c.y, 50, 5000, '#0033dd'));
 
-	var planetA = new CircleBody(c.x, c.y + 100, 5, 0.5, 'blue');
-	var planetB = new CircleBody(c.x, c.y, 5, 0.5, 'red');
-	var planetC = new CircleBody(c.x, c.y - 400, 5, 0.5, 'green');
+    for (var i = 2; i < count + 2; i++) {
 
-	this.bodies.push(planetA);
-	this.bodies.push(planetB);
-	this.bodies.push(planetC);
-	this.numBodies = this.bodies.length;
+        var px = c.x + (i * 50) + 100;
+        var py = c.y - 150;
 
-	//planetA.addForce(new Point(-200, 0));
-	//planetB.addForce(new Point(-100, 0));
-	//planetC.addForce(new Point(-800, 0));
+        var body = new CircleBody(px, py, 3, 5, '#00CCFF');
+
+        this.addBody(body);
+
+        body.addForce(new Point(-900, -200));
+    }
 }
 
 
@@ -28,7 +29,7 @@ DistanceForceStrategy.prototype.constructor = DistanceForceStrategy;
 
 /*
  * Override the accumulateForces method from AbstractStrategy and use
- * the distance of the bodies in the force equation
+ * the distance of the bodies in the force equation.
  */
 DistanceForceStrategy.prototype.accumulateForces = function () {
 
@@ -41,13 +42,16 @@ DistanceForceStrategy.prototype.accumulateForces = function () {
 			var pb = this.bodies[j];
 
 			var vect = pb.curr.subtract(pa.curr);
+
+            // only apply force if the bodies aren't touching
+            if (vect.length < pb.radius + pa.radius) continue;
+
             force.angle = vect.angle;
-            force.length = (this.gravity * pa.mass * pb.mass) / vect.length;
+            force.length = (this.gravity * pa.mass * pb.mass) / (vect.length * vect.length);
 
             pa.addForce(force)
             force = force.multiply(-1);
             pb.addForce(force);
-
 		}
 	}
 }
