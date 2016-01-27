@@ -27,14 +27,19 @@ AbstractStrategy.prototype.addBody = function (b) {
 }
 
 
-AbstractStrategy.prototype.simulate = function () {
-    this.accumulateForces();
-    this.integrate();
+AbstractStrategy.prototype.getBodies = function () {
+    return this.bodies;
 }
 
 
 AbstractStrategy.prototype.getNumBodies = function () {
     return this.numBodies;
+}
+
+
+AbstractStrategy.prototype.simulate = function () {
+    this.accumulateForces();
+    this.integrate();
 }
 
 
