@@ -52,7 +52,7 @@ AbstractStrategy.prototype.integrate = function () {
 
 /*
  * By default, classes that extend AbstractStrategy inherit this 
- * method. It's a simplified accumulator in that the distance of 
+ * method. It's a simplified accumulator, in that the distance of
  * the bodies isn't used in the force equation -- just gravity and
  * the mass of the bodies. 
  * 

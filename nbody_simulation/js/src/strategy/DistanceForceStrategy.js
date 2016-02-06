@@ -15,10 +15,8 @@ var DistanceForceStrategy = function () {
         var py = c.y - 150;
 
         var body = new CircleBody(px, py, 3, 5, '#00CCFF');
-
-        this.addBody(body);
-
         body.addForce(new Point(-900, -200));
+        this.addBody(body);
     }
 }
 
