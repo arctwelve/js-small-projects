@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>NBody Simulation with Strategy Pattern</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-
-    <!-- bl.ocks.org 960x500 thumb 230 x 120 --> 
+    <!-- bl.ocks.org size:960x500 thumb:230x120 -->
 </head>
-<body onload = "new NBodyContext()">
-	
-    <canvas id="myCanvas" resize></canvas>
-	
+
+<body onload="new NBodyContext()">
+
+    <canvas id="myCanvas"></canvas>
+
+    <div class="buttonParent">
+        <a id="obtBtn" class="uiButton">Orbit</a>
+        <a id="cptBtn" class="uiButton">Carpet</a>
+        <a id="sprBtn" class="uiButton">Spiral</a>
+        <a id="dstBtn" class="uiButton">Distance</a>
+    </div>
+
     <!-- 
-      -- For production, you'd want these all as modules, especially 
-      -- so you wouldn't have to load all the strategies here -- in order
-	  -- to experiment switching between them in NBodyContext.js
+        For production, you'd want these all as modules, especially so you wouldn't have to list/load
+        all the strategy.js files here - in order to experiment switching between them in NBodyContext.js
       -->
-    <script src="js/lib/paper-full.min.js"></script>
-	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-core.min.js"></script>
     <script src="js/src/CircleBody.js"></script>
     <script src="js/src/NBodyContext.js"></script>
-	
+
     <script src="js/src/strategy/AbstractStrategy.js"></script>
-	<script src="js/src/strategy/OrbitStrategy.js"></script>
+    <script src="js/src/strategy/OrbitStrategy.js"></script>
     <script src="js/src/strategy/CarpetStrategy.js"></script>
     <script src="js/src/strategy/SpiralStrategy.js"></script>
     <script src="js/src/strategy/DistanceForceStrategy.js"></script>
 
-    <div class="buttonParent">
-        <a id="orbitBtn" class="uiButton">Orbit</a>
-        <a id="carpetBtn" class="uiButton">Carpet</a>
-    </div
+    <script>window.onresize = function(){ location.reload(); }</script>
 </body>
 </html>

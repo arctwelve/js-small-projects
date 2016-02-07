@@ -5,25 +5,25 @@ var SpiralStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/20, gravity:0.1, damping:0.999});
 
-	var scale = 20;
-    var count = 150;
-	var radCoef = 0.3;
-	var mssCoef = 0.01;
+	let scale = 20;
+    let count = 150;
+	let radCoef = 0.3;
+	let mssCoef = 0.01;
 
-	var colorA = new Color(1.0, 0.0, 1.0, 0.9);
-	var colorB = new Color(1.0, 0.5, 0.0, 0.9);
+	let colorA = new Color(1.0, 0.0, 1.0, 0.9);
+	let colorB = new Color(1.0, 0.5, 0.0, 0.9);
 
-	var c = view.center;
+	let c = view.center.clone();
 	c.x -= 200;
 
-	for (var i = 1; i <= count; i++) {
+	for (let i = 1; i <= count; i++) {
 
 		c.x += Math.sin(i * 0.1) * scale;
 		c.y += Math.cos(i * 0.1) * (scale += 1);
 
-		var rad = i * radCoef + 1;
-		var mss = i * mssCoef + 1;
-		var color = (i % 2 == 0) ? colorA : colorB;
+		let rad = i * radCoef + 1;
+		let mss = i * mssCoef + 1;
+		let color = (i % 2 == 0) ? colorA : colorB;
 
 		this.addBody(new CircleBody(c.x, c.y, rad, mss, color));
 	}

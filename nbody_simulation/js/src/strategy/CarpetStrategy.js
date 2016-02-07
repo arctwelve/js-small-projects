@@ -40,7 +40,8 @@ CarpetStrategy.prototype.constructor = CarpetStrategy;
 
 CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) {
 
-	var c = view.center;
+	let c = view.center;
+
 	var halfW = ((newRowAt - 1) * colW) / 2;
 	var numRows = Math.ceil(numBodies / newRowAt);
 	var halfH = ((numRows - 1) * rowH) / 2;

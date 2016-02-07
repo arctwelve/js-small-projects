@@ -2,11 +2,13 @@
 
 var NBodyContext = function () {
 
-	this.bindStrategy("orbitBtn", OrbitStrategy);
-	this.bindStrategy("carpetBtn", CarpetStrategy);
+	this.bindStrategy("obtBtn", OrbitStrategy);
+	this.bindStrategy("cptBtn", CarpetStrategy);
+	this.bindStrategy("sprBtn", SpiralStrategy);
+	this.bindStrategy("dstBtn", DistanceForceStrategy);
 
     this.initCanvas();
-    this.simStrategy = new DistanceForceStrategy();
+    this.simStrategy = new SpiralStrategy();
 	this.run();
 }
 
