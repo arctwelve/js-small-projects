@@ -6,6 +6,7 @@ var NBodyContext = function () {
 	this.bindStrategy("cptBtn", CarpetStrategy);
 	this.bindStrategy("sprBtn", SpiralStrategy);
 	this.bindStrategy("dstBtn", DistanceForceStrategy);
+	this.bindStrategy("mouBtn", MouseEventStrategy);
 
     this.initCanvas();
     this.simStrategy = new SpiralStrategy();

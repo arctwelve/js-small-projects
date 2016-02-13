@@ -21,6 +21,9 @@ var DistanceForceStrategy = function () {
 }
 
 
+/*
+ *
+ */
 DistanceForceStrategy.prototype = Object.create(AbstractStrategy.prototype);
 DistanceForceStrategy.prototype.constructor = DistanceForceStrategy;
 

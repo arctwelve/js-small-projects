@@ -75,7 +75,7 @@ AbstractStrategy.prototype.accumulateForces = function () {
     for (let i = 0; i < this.numBodies; i++) {
         let pa = this.bodies[i];
 
-        let (var j = i + 1; j < this.numBodies; j++) {
+        for (let j = i + 1; j < this.numBodies; j++) {
             let pb = this.bodies[j];
 
             let vect = pb.curr.subtract(pa.curr);
