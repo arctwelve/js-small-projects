@@ -2,11 +2,11 @@
 
 var NBodyContext = function () {
 
-	this.bindStrategy("obtBtn", OrbitStrategy);
-	this.bindStrategy("cptBtn", CarpetStrategy);
-	this.bindStrategy("sprBtn", SpiralStrategy);
-	this.bindStrategy("dstBtn", DistanceForceStrategy);
-	this.bindStrategy("mouBtn", MouseEventStrategy);
+	this.addStrategy("obtBtn", OrbitStrategy);
+	this.addStrategy("cptBtn", CarpetStrategy);
+	this.addStrategy("sprBtn", SpiralStrategy);
+	this.addStrategy("dstBtn", DistanceForceStrategy);
+	this.addStrategy("mouBtn", MouseEventStrategy);
 
     this.initCanvas();
     this.simStrategy = new SpiralStrategy();
@@ -38,7 +38,7 @@ NBodyContext.prototype.draw = function () {
 }
 
 
-NBodyContext.prototype.bindStrategy = function (buttonID, strategyClass) {
+NBodyContext.prototype.addStrategy = function (buttonID, strategyClass) {
 
     let $this = this;
     let b = document.getElementById(buttonID);

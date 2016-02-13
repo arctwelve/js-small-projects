@@ -5,23 +5,23 @@ var CarpetStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/100, gravity:100, damping:0.999});
 
-	var count = 156;
-	var colWidth = 50;
-	var rowHeight = 50;
-	var newRowAtCol = 12;
-	var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, count);
+	let count = 156;
+	let colWidth = 50;
+	let rowHeight = 50;
+	let newRowAtCol = 12;
+	let origin = this.getCenter(rowHeight, colWidth, newRowAtCol, count);
 
-	var rad = 2;
-	var mass = 1;
-	var colorA = "red";
-	var colorB = "orange";
+	let rad = 2;
+	let mass = 1;
+	let colorA = "red";
+	let colorB = "orange";
 
-	var colCount = 0;
-	var p = new Point(origin);
+	let colCount = 0;
+	let p = new Point(origin);
 
-	for (var i = 0; i < count; i++) {
+	for (let i = 0; i < count; i++) {
 
-		var color = (i < count / 2) ? colorA : colorB;
+		let color = (i < count / 2) ? colorA : colorB;
 		this.addBody(new CircleBody(p.x, p.y, rad, mass, color));
 
 		p.x += colWidth;
@@ -38,15 +38,18 @@ CarpetStrategy.prototype = Object.create(AbstractStrategy.prototype);
 CarpetStrategy.prototype.constructor = CarpetStrategy;
 
 
+/*
+ * Returns the centerpoint of the carpet
+ */
 CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) {
 
 	let c = view.center;
 
-	var halfW = ((newRowAt - 1) * colW) / 2;
-	var numRows = Math.ceil(numBodies / newRowAt);
-	var halfH = ((numRows - 1) * rowH) / 2;
+	let halfW = ((newRowAt - 1) * colW) / 2;
+	let numRows = Math.ceil(numBodies / newRowAt);
+	let halfH = ((numRows - 1) * rowH) / 2;
 
-	var cx = c.x - halfW;
-	var cy = c.y - halfH;
+	let cx = c.x - halfW;
+	let cy = c.y - halfH;
 	return new Point(cx, cy);
 }
