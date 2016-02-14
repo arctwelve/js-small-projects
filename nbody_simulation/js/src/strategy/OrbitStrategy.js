@@ -7,9 +7,9 @@ var OrbitStrategy = function () {
 
 	let c = view.center
 	let star =   new CircleBody(c.x, c.y, 100, 300, 'orange');
-	let planetA = new CircleBody(c.x, c.y + 350, 5, 0.1, 'blue');
+	let planetA = new CircleBody(c.x, c.y + 350, 7, 0.1, 'blue');
 	let planetB = new CircleBody(c.x, c.y - 250, 4, 0.09, 'red');
-	let planetC = new CircleBody(c.x, c.y - 450, 6, 0.5, 'green');
+	let planetC = new CircleBody(c.x, c.y - 450, 10, 0.5, 'green');
 
 	this.addBody(star);
 	this.addBody(planetA);

@@ -15,7 +15,7 @@ var MouseEventStrategy = function () {
         let px = c.x + (i * 50) + 100;
         let py = c.y - 150;
 
-        let body = new CircleBody(px, py, 5, 5, "yellowgreen");
+        let body = new CircleBody(px, py, 5, 5, "yellow");
         body.addForce(new Point(-900, -200));
         this.addBody(body);
     }
