@@ -23,7 +23,11 @@ CircleBody.prototype = {
 	},
 	set velocity(v) {
 		this.prev = curr.subtract(v);
-	}
+	},
+    set position(p) {
+        this.prev = p;
+        this.curr = p;
+    }
 }
 
 
@@ -46,4 +50,11 @@ CircleBody.prototype.addForce = function (f) {
 
 CircleBody.prototype.draw = function () {
 	this.g.position = this.curr;
+}
+
+
+CircleBody.prototype.setMass = function (m) {
+	if (m === 0) m = 0.0001;
+    this.mass = m;
+    this.invMass = 1 / m;
 }

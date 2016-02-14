@@ -34,12 +34,15 @@ var CarpetStrategy = function () {
 }
 
 
+/*
+ * CarpetStrategy extends AbtractStrategy
+ */
 CarpetStrategy.prototype = Object.create(AbstractStrategy.prototype);
 CarpetStrategy.prototype.constructor = CarpetStrategy;
 
 
 /*
- * Returns the centerpoint of the carpet
+ * Returns the centerpoint of the carpet grid
  */
 CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) {
 

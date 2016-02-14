@@ -43,8 +43,10 @@ NBodyContext.prototype.addStrategy = function (buttonID, strategyClass) {
     let $this = this;
     let b = document.getElementById(buttonID);
 
+
     b.onclick = function () {
         project.clear();
+        view.off({ mousedown:'', mousemove:'', mouseup:'' });
         $this.simStrategy = new strategyClass();
         $this.run();
     }
