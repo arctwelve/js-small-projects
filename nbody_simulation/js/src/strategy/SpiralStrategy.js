@@ -1,6 +1,10 @@
 "use strict";
 
 
+/*
+ * A strategy that creates a large spiral configuration of bodies, of increasing
+ * mass and size.
+ */
 var SpiralStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/20, gravity:0.1, damping:0.999});

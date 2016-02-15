@@ -1,7 +1,9 @@
 "use strict";
 
+
 /*
- *
+ * Strategy that uses mouse events to affect the location and mass of an
+ * invisible particle.
  */
 var MouseEventStrategy = function () {
 
@@ -29,9 +31,6 @@ var MouseEventStrategy = function () {
 }
 
 
-/*
- * MouseEventStrategy extends AbtractStrategy
- */
 MouseEventStrategy.prototype = Object.create(AbstractStrategy.prototype);
 MouseEventStrategy.prototype.constructor = MouseEventStrategy;
 
@@ -49,7 +48,7 @@ MouseEventStrategy.prototype.accumulateForces = function () {
 
 /*
  * Add mouse events. Note that the context is responsible for cleaning up events each
- * time a new strategy is loaded
+ * time a new strategy is loaded.
  */
 MouseEventStrategy.prototype.createMouseEvents = function () {
 

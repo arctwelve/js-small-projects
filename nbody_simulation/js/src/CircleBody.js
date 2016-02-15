@@ -1,5 +1,15 @@
 "use strict";
 
+
+/*
+ * Circle shaped body used in the simulator.
+ *
+ * Each CircleBody handles its physical simulation through
+ * a verlet integrator in its integrate(...) method.
+ *
+ * The strategy classes decide the initial location, mass and
+ * color of each CircleBody -- and apply forces on the bodies.
+ */
 var CircleBody = function (x, y, radius, mass, color) {
 
 	this.radius = radius;

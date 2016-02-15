@@ -1,5 +1,12 @@
 "use strict";
 
+
+/*
+ * In the Strategy design pattern, the context class holds or manages
+ * the Strategy classes. The NBodyContext class also acts as the top
+ * level 'Engine' class for the demo: initializing, applying the selected
+ * strategy and running the main loop.
+ */
 var NBodyContext = function () {
 
 	this.addStrategy("obtBtn", OrbitStrategy);
@@ -38,11 +45,14 @@ NBodyContext.prototype.draw = function () {
 }
 
 
+/*
+ * Adds a strategy to the context and attaches it to the passed button element.
+ *
+ */
 NBodyContext.prototype.addStrategy = function (buttonID, strategyClass) {
 
     let $this = this;
     let b = document.getElementById(buttonID);
-
 
     b.onclick = function () {
         project.clear();

@@ -1,6 +1,9 @@
 "use strict";
 
 
+/*
+ * Strategy with an arrangment of particles in a carpet-like grid.
+ */
 var CarpetStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/100, gravity:100, damping:0.999});
@@ -34,9 +37,6 @@ var CarpetStrategy = function () {
 }
 
 
-/*
- * CarpetStrategy extends AbtractStrategy
- */
 CarpetStrategy.prototype = Object.create(AbstractStrategy.prototype);
 CarpetStrategy.prototype.constructor = CarpetStrategy;
 

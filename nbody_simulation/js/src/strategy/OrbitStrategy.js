@@ -1,6 +1,9 @@
 "use strict";
 
 
+/*
+ * Simple strategy of a few 'planet' bodies orbiting a central one
+ */
 var OrbitStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/10, gravity:0.5, damping:1.0});

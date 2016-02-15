@@ -1,6 +1,10 @@
 "use strict";
 
 
+/*
+ * Strategy class that uses the distance of the bodies along with mass
+ * and a gravity constant in the accumulator
+ */
 var DistanceForceStrategy = function () {
 
 	AbstractStrategy.call(this, {timeStep:1/5, gravity:50, damping:0.998});
@@ -21,9 +25,6 @@ var DistanceForceStrategy = function () {
 }
 
 
-/*
- * DistanceForceStategy extends AbtractStrategy
- */
 DistanceForceStrategy.prototype = Object.create(AbstractStrategy.prototype);
 DistanceForceStrategy.prototype.constructor = DistanceForceStrategy;
 
