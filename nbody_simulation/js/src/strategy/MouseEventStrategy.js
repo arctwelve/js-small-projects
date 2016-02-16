@@ -7,7 +7,7 @@
  */
 var MouseEventStrategy = function () {
 
-    AbstractStrategy.call(this, { timeStep: 1/25, gravity: 0.1, damping: 0.97 });
+    AbstractStrategy.call(this, {timeStep: 1/25, gravity: 0.1, damping: 0.97});
 
     let count = 150;
     let c = view.center;
