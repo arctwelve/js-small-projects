@@ -9,15 +9,16 @@ var MouseEventStrategy = function () {
 
     AbstractStrategy.call(this, {timeStep: 1/25, gravity: 0.1, damping: 0.97});
 
-    var count = 150;
+    var count = 99;
     var c = view.center;
+    var dispersal = 300;
 
-    for (var i = 2; i < count + 2; i++) {
+    for (var i = 0; i < count; i++) {
 
-        var px = c.x + (i * 50) + 100;
-        var py = c.y - 150;
+        var px = c.x + (Math.random() - 0.5) * dispersal;
+        var py = c.y + (Math.random() - 0.5) * dispersal;
 
-        var body = new CircleBody(px, py, 5, 5, "yellow");
+        var body = new CircleBody(px, py, 3, 5, "yellow");
         body.addForce(new Point(-900, -200));
         this.addBody(body);
     }

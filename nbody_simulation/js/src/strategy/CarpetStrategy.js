@@ -12,10 +12,10 @@ var CarpetStrategy = function () {
         damping: 0.999
     });
 
-    var count = 156;
-    var colWidth = 50;
-    var rowHeight = 50;
-    var newRowAtCol = 12;
+    var count = 99;
+    var colWidth = 60;
+    var rowHeight = 70;
+    var newRowAtCol = 11;
     var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, count);
 
     var rad = 2;
@@ -56,7 +56,7 @@ CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) 
     var numRows = Math.ceil(numBodies / newRowAt);
     var halfH = ((numRows - 1) * rowH) / 2;
 
-    cx = c.x - halfW;
-    cy = c.y - halfH;
+    var cx = c.x - halfW;
+    var cy = c.y - halfH;
     return new Point(cx, cy);
 }
