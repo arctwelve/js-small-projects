@@ -18,9 +18,7 @@ var MouseEventStrategy = function () {
         var px = c.x + (Math.random() - 0.5) * dispersal;
         var py = c.y + (Math.random() - 0.5) * dispersal;
 
-        var body = new CircleBody(px, py, 3, 5, "yellow");
-        body.addForce(new Point(-900, -200));
-        this.addBody(body);
+        this.addBody(new CircleBody(px, py, 3, 5, "yellow"));
     }
 
     this.mouseMass = 10000;

@@ -2,16 +2,16 @@
 
 
 /*
- * A strategy that creates a large spiral configuration of bodies, of increasing
- * mass and size.
+ * A strategy that creates a spiral configuration of bodies of increasing
+ * mass and radius.
  */
 var SpiralStrategy = function () {
 
     AbstractStrategy.call(this, {timeStep:1/20, gravity:0.1, damping:0.999});
 
     var scale = 20;
-    var count = 150;
-    var radCoef = 0.3;
+    var count = 99;
+    var radCoef = 0.4;
     var mssCoef = 0.01;
 
     var colorA = new Color(1.0, 0.0, 1.0, 0.9);
