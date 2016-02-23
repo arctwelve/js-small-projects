@@ -7,7 +7,7 @@
  */
 var SpiralStrategy = function () {
 
-    AbstractStrategy.call(this, {timeStep:1/20, gravity:0.1, damping:0.999});
+    AbstractStrategy.call(this, {timeStep:1/15, gravity:0.1, damping:0.999});
 
     var scale = 20;
     var count = 99;

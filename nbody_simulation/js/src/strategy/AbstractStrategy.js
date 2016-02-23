@@ -88,7 +88,6 @@ AbstractStrategy.prototype.accumulateForces = function () {
             pa.addForce(force)
             force = force.multiply(-1);
             pb.addForce(force);
-
         }
     }
 }

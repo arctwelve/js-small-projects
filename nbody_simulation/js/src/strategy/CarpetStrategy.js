@@ -6,11 +6,7 @@
  */
 var CarpetStrategy = function () {
 
-    AbstractStrategy.call(this, {
-        timeStep: 1 / 100,
-        gravity: 100,
-        damping: 0.999
-    });
+    AbstractStrategy.call(this, {timeStep: 1/100, gravity: 100, damping: 0.999});
 
     var count = 99;
     var colWidth = 60;
