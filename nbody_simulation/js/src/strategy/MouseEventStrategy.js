@@ -9,15 +9,15 @@ var MouseEventStrategy = function () {
 
     AbstractStrategy.call(this, {timeStep: 1/25, gravity: 0.1, damping: 0.97});
 
-    let count = 150;
-    let c = view.center;
+    var count = 150;
+    var c = view.center;
 
-    for (let i = 2; i < count + 2; i++) {
+    for (var i = 2; i < count + 2; i++) {
 
-        let px = c.x + (i * 50) + 100;
-        let py = c.y - 150;
+        var px = c.x + (i * 50) + 100;
+        var py = c.y - 150;
 
-        let body = new CircleBody(px, py, 5, 5, "yellow");
+        var body = new CircleBody(px, py, 5, 5, "yellow");
         body.addForce(new Point(-900, -200));
         this.addBody(body);
     }
@@ -52,7 +52,7 @@ MouseEventStrategy.prototype.accumulateForces = function () {
  */
 MouseEventStrategy.prototype.createMouseEvents = function () {
 
-    let $this = this;
+    var $this = this;
 
     view.on('mousedown', function (event) {
         $this.mouseBody.setMass($this.mouseMass * -0.5);

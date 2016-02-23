@@ -10,16 +10,16 @@ var DistanceForceStrategy = function () {
     AbstractStrategy.call(this, {timeStep: 1 / 5, gravity: 50, damping: 0.998
     });
 
-    let count = 100;
-    let c = view.center;
+    var count = 100;
+    var c = view.center;
     this.addBody(new CircleBody(c.x, c.y, 50, 5000, '#0033dd'));
 
-    for (let i = 2; i < count + 2; i++) {
+    for (var i = 2; i < count + 2; i++) {
 
-        let px = c.x + (i * 50) + 100;
-        let py = c.y - 150;
+        var px = c.x + (i * 50) + 100;
+        var py = c.y - 150;
 
-        let body = new CircleBody(px, py, 3, 5, '#00CCFF');
+        var body = new CircleBody(px, py, 3, 5, '#00CCFF');
         body.addForce(new Point(-900, -200));
         this.addBody(body);
     }
@@ -36,15 +36,15 @@ DistanceForceStrategy.prototype.constructor = DistanceForceStrategy;
  */
 DistanceForceStrategy.prototype.accumulateForces = function () {
 
-    let force = new Point();
+    var force = new Point();
 
-    for (let i = 0; i < this.numBodies; i++) {
-        let pa = this.bodies[i];
+    for (var i = 0; i < this.numBodies; i++) {
+        var pa = this.bodies[i];
 
-        for (let j = i + 1; j < this.numBodies; j++) {
-            let pb = this.bodies[j];
+        for (var j = i + 1; j < this.numBodies; j++) {
+            var pb = this.bodies[j];
 
-            let vect = pb.curr.subtract(pa.curr);
+            var vect = pb.curr.subtract(pa.curr);
 
             // only apply force if the bodies aren't touching
             if (vect.length < pb.radius + pa.radius) continue;

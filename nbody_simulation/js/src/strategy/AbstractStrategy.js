@@ -47,7 +47,7 @@ AbstractStrategy.prototype.simulate = function () {
 
 
 AbstractStrategy.prototype.integrate = function () {
-    for (let i = 0; i < this.numBodies; i++) {
+    for (var i = 0; i < this.numBodies; i++) {
         this.bodies[i].integrate(this.dt2, this.damping);
     }
 }
@@ -73,15 +73,15 @@ AbstractStrategy.prototype.integrate = function () {
  */
 AbstractStrategy.prototype.accumulateForces = function () {
 
-    let force = new Point();
+    var force = new Point();
 
-    for (let i = 0; i < this.numBodies; i++) {
-        let pa = this.bodies[i];
+    for (var i = 0; i < this.numBodies; i++) {
+        var pa = this.bodies[i];
 
-        for (let j = i + 1; j < this.numBodies; j++) {
-            let pb = this.bodies[j];
+        for (var j = i + 1; j < this.numBodies; j++) {
+            var pb = this.bodies[j];
 
-            let vect = pb.curr.subtract(pa.curr);
+            var vect = pb.curr.subtract(pa.curr);
             force.angle = vect.angle;
             force.length = this.gravity * pa.mass * pb.mass;
 

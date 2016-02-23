@@ -22,14 +22,14 @@ var NBodyContext = function () {
 
 
 NBodyContext.prototype.initCanvas = function () {
-    let canvas = document.getElementById('myCanvas');
+    var canvas = document.getElementById('myCanvas');
     paper.setup(canvas);
     paper.install(window);
 }
 
 
 NBodyContext.prototype.run = function () {
-    let $this = this;
+    var $this = this;
     view.onFrame = function (event) {
         $this.simStrategy.simulate();
         $this.draw();
@@ -38,8 +38,8 @@ NBodyContext.prototype.run = function () {
 
 
 NBodyContext.prototype.draw = function () {
-    let s = this.simStrategy;
-    for (let i = 0; i < s.getNumBodies(); i++) {
+    var s = this.simStrategy;
+    for (var i = 0; i < s.getNumBodies(); i++) {
         s.getBodies()[i].draw();
     }
 }
@@ -50,8 +50,8 @@ NBodyContext.prototype.draw = function () {
  */
 NBodyContext.prototype.addStrategy = function (buttonID, strategyClass) {
 
-    let $this = this;
-    let b = document.getElementById(buttonID);
+    var $this = this;
+    var b = document.getElementById(buttonID);
 
     b.onclick = function () {
         project.clear();

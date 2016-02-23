@@ -13,8 +13,7 @@
 var CircleBody = function (x, y, radius, mass, color) {
 
     this.radius = radius;
-    this.mass = mass;
-    this.invMass = 1 / mass;
+    this.setMass(mass);
 
     this.curr = new Point(x, y);
     this.prev = new Point(x, y);
