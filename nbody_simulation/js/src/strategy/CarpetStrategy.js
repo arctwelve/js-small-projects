@@ -6,25 +6,29 @@
  */
 var CarpetStrategy = function () {
 
-    AbstractStrategy.call(this, {timeStep: 1/100, gravity: 100, damping: 0.999});
+    AbstractStrategy.call(this, {
+        timeStep: 1 / 100,
+        gravity: 100,
+        damping: 0.999
+    });
 
-     count = 156;
-     colWidth = 50;
-     rowHeight = 50;
-     newRowAtCol = 12;
-     origin = this.getCenter(rowHeight, colWidth, newRowAtCol, count);
+    var count = 156;
+    var colWidth = 50;
+    var rowHeight = 50;
+    var newRowAtCol = 12;
+    var origin = this.getCenter(rowHeight, colWidth, newRowAtCol, count);
 
-     rad = 2;
-     mass = 1;
-     colorA = "red";
-     colorB = "orange";
+    var rad = 2;
+    var mass = 1;
+    var colorA = "red";
+    var colorB = "orange";
 
-     colCount = 0;
-     p = new Point(origin);
+    var colCount = 0;
+    var p = new Point(origin);
 
-    for ( i = 0; i < count; i++) {
+    for (var i = 0; i < count; i++) {
 
-         color = (i < count / 2) ? colorA : colorB;
+        var color = (i < count / 2) ? colorA : colorB;
         this.addBody(new CircleBody(p.x, p.y, rad, mass, color));
 
         p.x += colWidth;
@@ -46,13 +50,13 @@ CarpetStrategy.prototype.constructor = CarpetStrategy;
  */
 CarpetStrategy.prototype.getCenter = function (rowH, colW, newRowAt, numBodies) {
 
-     c = view.center;
+    var c = view.center;
 
-     halfW = ((newRowAt - 1) * colW) / 2;
-     numRows = Math.ceil(numBodies / newRowAt);
-     halfH = ((numRows - 1) * rowH) / 2;
+    var halfW = ((newRowAt - 1) * colW) / 2;
+    var numRows = Math.ceil(numBodies / newRowAt);
+    var halfH = ((numRows - 1) * rowH) / 2;
 
-     cx = c.x - halfW;
-     cy = c.y - halfH;
+    cx = c.x - halfW;
+    cy = c.y - halfH;
     return new Point(cx, cy);
 }
