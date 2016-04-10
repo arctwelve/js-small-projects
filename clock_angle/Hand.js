@@ -1,7 +1,7 @@
 "use strict";
 
 /*
- * Represents a hand on the clock. Used for both hour and minute. 
+ * Represents a hand on the clock. Used for both hands.
  */
 var Hand = function (color, size) {
     
@@ -29,14 +29,18 @@ var Hand = function (color, size) {
 Hand.prototype.update = function (t) {
     
     var endPoint = this.path.lastSegment.point;
-    
     endPoint.x = view.center.x + Math.sin(t) * this.size;
     endPoint.y = view.center.y - Math.cos(t) * this.size;
 }
 
 
-Hand.prototype.asVector = function() {
-    return new Point(this.path.segments[1].point.subtract(this.path.segments[0].point))
+/*
+ * Returns the hand as normalized vector (with a length of 1)
+ */
+Hand.prototype.asNormalizedVector = function() {
+    var p = this.path.segments[1].point.subtract(this.path.segments[0].point);
+    p = p.normalize();
+    return p;
 }
 
 

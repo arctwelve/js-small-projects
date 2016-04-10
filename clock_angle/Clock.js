@@ -2,18 +2,20 @@
 
 /*
  * Object represents a clock, temporally and visually. The hands of the clock move
- * based on the advance of a second propery. The second property is incremented by 
- * an arbitrary rate property. 
+ * based on the advance of a 'second' propery. The 'second' property is incremented by
+ * an arbitrary 'rate' property. For accurate time the rate could just be connected to
+ * the system clock.
  *
- * The clock isn't meant to show current time, but to demonstrate angles of the hands
- * based on vector methods, and variable time units (e.g., a day can be 5 'hours' long
- * and an hour/minute can be 20 units instead of 60)
+ * The example isn't meant to show the current time, but to demonstrate accurate angles of the
+ * hands based on simple vector methods. Variable time units work correctly (e.g., a day can
+ * be 5.2 'hours' long and an minute can be 20.33 'seconds' instead of 60). This shows the
+ * benefit of solving for the general case instead of a naive arithmetic solution.
  */
 var Clock = function () {
     
-    this.rate = 2;
-    this.temporalUnit = 60;
-    this.hoursInCycle = 12;
+    this.rate = 1;
+    this.temporalUnit = 20;
+    this.hoursInCycle = 13;
     
     this.second = 0;
     this.radius = 300;
