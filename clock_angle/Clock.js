@@ -13,9 +13,9 @@
  */
 var Clock = function () {
     
-    this.rate = 1;
-    this.temporalUnit = 20;
-    this.hoursInCycle = 13;
+    this.rate = 1;                     // increments the second property
+    this.temporalUnit = 50.3;           // represents the sum units of both minutes and hours
+    this.hoursInCycle = 14.2;           // number of hours in a clock cycle
     
     this.second = 0;
     this.radius = 300;

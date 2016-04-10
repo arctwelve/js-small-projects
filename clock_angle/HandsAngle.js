@@ -23,7 +23,7 @@ var HandsAngle = function (handA, handB) {
 	    strokeWidth: 2,
     };
 
-    this.thetaText.opacity = 0.4;
+    this.thetaText.opacity = 0.3;
     handA.path.insertAbove(this.thetaText);
 
     var circleAttr = {
