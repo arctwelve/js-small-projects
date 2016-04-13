@@ -8,8 +8,7 @@
  *
  * The example isn't meant to show the current time, but to demonstrate accurate angles of the
  * hands based on simple vector methods. Variable time units work correctly (e.g., a day can
- * be 5.2 'hours' long and an minute can be 20.33 'seconds' instead of 60). This shows the
- * benefit of solving for the general case instead of a naive arithmetic solution.
+ * be 5.2 hours long and a minute can be 20.33 seconds).
  */
 var Clock = function () {
     
@@ -21,7 +20,7 @@ var Clock = function () {
     this.radius = 300;
     this.strokeWidth = 15;
     
-    this.face = this.drawFace('#D1DBBD', '#3E606F');
+    this.face = this.createFace('#D1DBBD', '#3E606F');
     this.hourHand = new Hand('#91AA9D', this.radius * 0.5);
     this.minuteHand = new Hand('#3E606F ', this.radius * 0.8);
     
@@ -43,14 +42,14 @@ Clock.prototype.update = function () {
 }
 
 
-Clock.prototype.drawFace = function (fillColor, strokeColor) {
+Clock.prototype.createFace = function (fillColor, strokeColor) {
     
-    var p = new Path.Circle(view.center, this.radius);
-	p.strokeWidth = this.strokeWidth;
-	p.strokeColor = strokeColor;
-	p.fillColor = fillColor;
+    var face = new Path.Circle(view.center, this.radius);
+	face.strokeWidth = this.strokeWidth;
+	face.strokeColor = strokeColor;
+	face.fillColor = fillColor;
     
-    return p;
+    return face;
 }
 
 
