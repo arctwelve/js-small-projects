@@ -78,7 +78,7 @@ HandsAngle.prototype.drawAngleArc = function (vA, vB) {
     var acutePoint = view.center.add(vC);
     var obtusePoint = view.center.add(vD);
 
-    // draw arc endpoint circles on the hands
+    // draw endpoint circles on the hands
     this.circleA.position = handPointA;
     this.circleB.position = handPointB;
 
@@ -97,7 +97,7 @@ HandsAngle.prototype.drawAngleValue = function (radians, vA, vB) {
 
     var isAcute = (vA.cross(vB) < 0) ? true : false;
     var degrees = radians * (180 / Math.PI);
-    degrees = Math.round(isAcute ? degrees: 360 - degrees);
+    degrees = Math.round(isAcute ? degrees : 360 - degrees);
 
     this.thetaText.content = degrees;
 

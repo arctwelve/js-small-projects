@@ -3,8 +3,8 @@
 /*
  * Object represents a clock, temporally and visually. The hands of the clock move
  * based on the advance of a 'second' propery. The 'second' property is incremented by
- * an arbitrary 'rate' property. For accurate time the rate could just be connected to
- * the system clock.
+ * an arbitrary 'rate' property. For accurate time the 'rate' could just be connected
+ * or replaced by the system clock second.
  *
  * The example isn't meant to show the current time, but to demonstrate accurate angles of the
  * hands based on simple vector methods. Variable time units work correctly (e.g., a day can
@@ -13,7 +13,7 @@
  */
 var Clock = function () {
     
-    this.rate = 1;                     // increments the second property
+    this.rate = 1;                      // increments the second property
     this.temporalUnit = 50.3;           // represents the sum units of both minutes and hours
     this.hoursInCycle = 14.2;           // number of hours in a clock cycle
     
