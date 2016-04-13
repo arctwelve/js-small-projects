@@ -16,7 +16,7 @@ var HandsAngle = function (handA, handB) {
     this.thetaText = new PointText();
     this.thetaText.style = {
         fontFamily: 'Verdana',
-        fontSize: 80,
+        fontSize: 70,
         fontWeight: 900,
         fillColor: '#91AA9D',
         strokeColor:'#3E606F',
