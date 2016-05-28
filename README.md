@@ -1,1 +1,1 @@
-Experimental starter projects and tests in JavaScript
+Experimental starter projects, demos and tests in JavaScript
