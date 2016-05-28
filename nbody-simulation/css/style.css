@@ -13,10 +13,10 @@ canvas {
 }
 
 .buttonParent {
-    padding: 10px 0 10px 20px;
+    padding: 10px 0 10px 0;
     position: fixed;
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
     height: 30px;
     width: 100%;
     background: #ddd;
@@ -36,7 +36,8 @@ canvas {
     padding: 6px 60px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffffff;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .uiButton:hover {

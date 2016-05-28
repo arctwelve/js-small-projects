@@ -26,25 +26,18 @@ var CircleBody = function (x, y, radius, mass, color) {
 }
 
 
-CircleBody.prototype = {
-    get velocity() {
-        return this.curr.subtract(this.prev);
-    },
-    set velocity(v) {
-        this.prev = curr.subtract(v);
-    },
-    set position(p) {
-        this.prev = p;
-        this.curr = p;
-    }
+CircleBody.prototype.setPosition = function(p) {
+    this.prev = p;
+    this.curr = p;
 }
 
 
 CircleBody.prototype.integrate = function (dt2, damping) {
 
     var temp = this.curr.clone();
-
-    var nv = this.velocity.add(this.forces.multiply(dt2));
+        
+    var velocity = this.curr.subtract(this.prev);
+    var nv = velocity.add(this.forces.multiply(dt2));
     this.curr = this.curr.add(nv.multiply(damping))
     this.prev = temp.clone();
 

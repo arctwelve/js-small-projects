@@ -41,7 +41,7 @@ MouseEventStrategy.prototype.constructor = MouseEventStrategy;
  */
 MouseEventStrategy.prototype.accumulateForces = function () {
     AbstractStrategy.prototype.accumulateForces.call(this);
-    this.mouseBody.position = this.mousePoint;
+    this.mouseBody.setPosition(this.mousePoint);
 }
 
 
