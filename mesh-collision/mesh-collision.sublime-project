@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "D:\\dev\\js-small-projects"
+		}
+	],
+   "settings": {
+      "sublime-view-in-browser": {
+         "baseUrl": "http://localhost:8001",
+         "basePath": "D:\\dev\\js-small-projects\\mesh-collision"
+      }
+   }
+}

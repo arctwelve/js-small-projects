@@ -1,129 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <style type="text/css">
-        body {
-            overflow: hidden;
-            background-color: #cccccc;
-            margin: 0;
-        }
+    <title>Mesh Collision</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+    body {
+        color: #000;
+        margin: 0;
+        overflow: hidden;
+    }
     </style>
 </head>
 
 <body>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
     <script src="js/controls/TrackballControls.js"></script>
-    <script src="js/parser.js"></script>
     <script src="js/Particle.js"></script>
-    <script src="js/Surface.js"></script>
     <script src="js/EditableSurface.js"></script>
-    <script src="js/Camera.js"></script>
-    <script src="js/SpotLight.js"></script>
-
+    <script src="js/SkyBox.js"></script>
 
     <script>
-        var scene, camera, renderer, controls, spot;
-        var particles, surface, helper, lastFace, lightX;
-
-        var raycaster = new THREE.Raycaster();
-        var mouse = new THREE.Vector2();
+    
+    var renderer, scene, camera;
+    var controls, particles, surface;
 
 
-        
-        function onMouseMove(event) {
-            // clamp to normalized (-1 to +1)
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    var mouse = new THREE.Vector2();
+
+
+
+    function init() {
+
+        renderer = new THREE.WebGLRenderer({
+            antialias: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.5, 3000000);
+        camera.position.set(2000, 750, 2000);
+
+
+        // SURFACE
+        surface = new EditableSurface();
+        scene.add(surface);
+
+
+        // LIGHTS
+        scene.add(new THREE.AmbientLight(0x444444));
+        var light = new THREE.DirectionalLight(0xffffbb, 1);
+        light.position.set(1, 1, 1);
+        scene.add(light);
+
+
+        // SKYBOX
+        scene.add(new SkyBox());
+
+        createParticles(0);
+
+        controls = new THREE.TrackballControls(camera);
+        controls.rotateSpeed = 9.0;
+    }
+
+
+
+    function render() {
+
+        for (var j = 0; j < particles.length; j++) {
+            particles[j].update();
         }
 
 
+        surface.respondToMouseLocation(mouse, camera)
 
-        function init() {
+        controls.update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(render);
+    }
 
-            scene = new THREE.Scene();
-            camera = new Camera();
 
-            surface = new EditableSurface();
-            scene.add(surface);
-            
-            lightX = 0;
-            spot = new SpotLight();
-            scene.add(spot);
 
-            createParticles(0);
+    function createParticles(n) {
 
-            controls = new THREE.TrackballControls(camera);
-            controls.rotateSpeed = 9.0;
-
-            renderer = new THREE.WebGLRenderer({
-                alpha: false,
-                antialias: true
+        particles = [];
+        for (var j = 0; j < n; j++) {
+            var p = new Particle(new THREE.Vector3(), {
+                mass: 1,
+                radius: 3,
+                color: 0xffff * Math.random()
             });
 
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
+            p.addForce(new THREE.Vector3(
+                Math.random(),
+                Math.random() * 400,
+                Math.random()
+            ));
+
+            particles.push(p);
+            scene.add(p);
         }
+    }
 
-        
 
-        function render() {
-            
-            for (var j = 0; j < particles.length; j++) {
-                particles[j].update();
-            }
 
-            
-            raycaster.setFromCamera(mouse, camera);
-            var intersects = raycaster.intersectObject(surface);
-            
-            if (intersects.length === 1) {
-                var face = intersects[0].face;
-                if (face !== lastFace) {
-                    surface.transformIntersect(face);
-                    lastFace = face;
-                }
-            }
-            
-            spot.position.set(lightX += 0.1, 400, 0);
-            controls.update();
-            renderer.render(scene, camera);
-            requestAnimationFrame(render);
-        }
+    window.onload = function() {
+        init();
+        render();
+    }
 
-        
 
-        function createParticles(n) {
 
-            particles = [];
-            for (var j = 0; j < n; j++) {
-                var p = new Particle(new THREE.Vector3(), {
-                    mass: 1,
-                    radius: 3,
-                    color: 0xffff * Math.random()
-                });
+    function onMouseMove(event) {
+        // clamp to normalized (-1 to +1)
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
 
-                p.addForce(new THREE.Vector3(
-                    Math.random(),
-                    Math.random() * 400,
-                    Math.random()
-                ));
 
-                particles.push(p);
-                scene.add(p);
-            }
-        }
-
-        
-
-        window.onload = function () {
-            init();
-            render();
-        }
-
-        
-        window.addEventListener('mousemove', onMouseMove, false); 
+    window.addEventListener('mousemove', onMouseMove, false);
     </script>
 </body>
 
