@@ -16,16 +16,13 @@
 
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
-    <script src="js/controls/TrackballControls.js"></script>
+    <script src="js/controls/KeyboardControls.js"></script>
     <script src="js/Particle.js"></script>
     <script src="js/EditableSurface.js"></script>
     <script src="js/SkyBox.js"></script>
-
     <script>
-    
     var renderer, scene, camera;
-    var controls, particles, surface;
-
+    var particles, surface, controls;
 
     var mouse = new THREE.Vector2();
 
@@ -36,6 +33,7 @@
         renderer = new THREE.WebGLRenderer({
             antialias: true
         });
+
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
         document.body.appendChild(renderer.domElement);
@@ -43,7 +41,7 @@
         scene = new THREE.Scene();
 
         camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.5, 3000000);
-        camera.position.set(2000, 750, 2000);
+        camera.position.set(0, 750, 2000);
 
 
         // SURFACE
@@ -63,8 +61,7 @@
 
         createParticles(0);
 
-        controls = new THREE.TrackballControls(camera);
-        controls.rotateSpeed = 9.0;
+        controls = new THREE.KeyboardControls(document, camera);
     }
 
 
@@ -75,14 +72,11 @@
             particles[j].update();
         }
 
-
-        surface.respondToMouseLocation(mouse, camera)
-
         controls.update();
+        surface.respondToMouseLocation(mouse, camera)
         renderer.render(scene, camera);
         requestAnimationFrame(render);
     }
-
 
 
     function createParticles(n) {
@@ -127,3 +121,4 @@
 </body>
 
 </html>
+

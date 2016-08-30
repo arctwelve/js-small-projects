@@ -64,6 +64,8 @@ EditableSurface.prototype.update = function() {
  */
 EditableSurface.prototype.respondToMouseLocation = function(mouse, camera) {
 
+    // need to get verts within circle
+
     this.raycaster.setFromCamera(mouse, camera);
     var intersects = this.raycaster.intersectObject(this);
 
@@ -97,6 +99,7 @@ EditableSurface.prototype.alterFace = function(face, faceIndex) {
     var vertA = this.geometry.vertices[face.a];
     var vertB = this.geometry.vertices[face.b];
     var vertC = this.geometry.vertices[face.c];
+
     vertA.setY(vertA.y + this.elevationAmt);
     vertB.setY(vertB.y + this.elevationAmt);
     vertC.setY(vertC.y + this.elevationAmt);
@@ -105,6 +108,7 @@ EditableSurface.prototype.alterFace = function(face, faceIndex) {
     vertA = this.geometry.vertices[face.a + c];
     vertB = this.geometry.vertices[face.b + c];
     vertC = this.geometry.vertices[face.c + c];
+    
     vertA.setY(vertA.y + this.elevationAmt);
     vertB.setY(vertB.y + this.elevationAmt);
     vertC.setY(vertC.y + this.elevationAmt);
