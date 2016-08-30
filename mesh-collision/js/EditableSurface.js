@@ -3,7 +3,7 @@
  * position and color of its faces.
  */
 
-function EditableSurface() {
+var EditableSurface = function () {
 
     THREE.Mesh.call(this);
 

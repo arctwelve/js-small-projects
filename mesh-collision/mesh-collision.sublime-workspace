@@ -5,7 +5,63 @@
 		[
 			[
 				"p",
-				"pointLight"
+				"position"
+			],
+			[
+				"c",
+				"camera"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
+				"onKey",
+				"onKeyDown"
+			],
+			[
+				"do",
+				"domElement"
+			],
+			[
+				"cam",
+				"camVelZ"
+			],
+			[
+				"fr",
+				"forwardBtn"
+			],
+			[
+				"for",
+				"forwardBtn"
+			],
+			[
+				"init",
+				"initColor"
+			],
+			[
+				"pr",
+				"prototype"
+			],
+			[
+				"gr",
+				"graniteCol"
+			],
+			[
+				"ge",
+				"geometry"
+			],
+			[
+				"l",
+				"lightHelper"
+			],
+			[
+				"Light",
+				"lightHelper"
+			],
+			[
+				"sk",
+				"skyBox"
 			],
 			[
 				"chr",
@@ -16,10 +72,37 @@
 	"buffers":
 	[
 		{
+			"file": "js/controls/KeyboardControls.js",
+			"settings":
+			{
+				"buffer_size": 1858,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4184,
+				"buffer_size": 2347,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/EditableSurface.js",
+			"settings":
+			{
+				"buffer_size": 4782,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Part",
+			"file": "js/ParticleEngine.js",
+			"file_size": 0,
+			"file_write_time": 131170623607350946,
+			"settings":
+			{
+				"buffer_size": 4,
 				"line_ending": "Windows"
 			}
 		}
@@ -31,10 +114,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 265.0,
-		"last_filter": "men",
+		"height": 104.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"instak",
+				"Package Control: Install Package"
+			],
 			[
 				"men",
 				"View: Toggle Menu"
@@ -84,17 +175,25 @@
 		"/D/dev/js-small-projects",
 		"/D/dev/js-small-projects/mesh-collision",
 		"/D/dev/js-small-projects/mesh-collision/js",
+		"/D/dev/js-small-projects/mesh-collision/js/controls",
 		"/D/dev/js-small-projects/mesh-collision/textures"
 	],
 	"file_history":
 	[
-		"/D/dev/js-small-projects/mesh-collision/mesh-collision.sublime-project",
+		"/D/dev/js-small-projects/mesh-collision/js/ParticleEngine.js",
+		"/D/dev/js-small-projects/mesh-collision/js/controls/TrackballControls.js",
 		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/dev/js-small-projects/README.md",
+		"/D/dev/js-small-projects/mesh-collision/js/SkyBox.js",
+		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/User/ColorPicker.sublime-settings",
+		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/ColorPicker/ColorPicker.sublime-settings",
+		"/D/dev/js-small-projects/mesh-collision/index2.html",
+		"/D/dev/js-small-projects/mesh-collision/js/Camera.js",
+		"/D/dev/js-small-projects/mesh-collision/mesh-collision.sublime-project",
 		"/D/dev/js-small-projects/mesh-collision/index.html",
 		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/User/View In Browser.sublime-settings",
-		"/D/dev/js-small-projects/mesh-collision/index2.html",
 		"/D/dev/js-small-projects/mesh-collision/js/EditableSurface.js",
 		"/D/dev/js-small-projects/mesh-collision/js/Light.js",
 		"/C/Users/THX1138/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
@@ -102,7 +201,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -116,6 +215,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"isKeyBackward",
+			"touchstart",
+			"bind",
+			"keyup",
+			"script",
+			"MozMousePixelScroll",
+			"addEventListener",
+			"onMo",
+			"+ 10",
+			"graniteCol",
+			"snowpeakCol",
+			"EditableSurface",
 			"panel",
 			"lastFace",
 			"},\n",
@@ -130,6 +241,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"+ this.elevationAmt"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -140,24 +252,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "js/controls/KeyboardControls.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4184,
+						"buffer_size": 1858,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								177,
-								177
+								1415,
+								1415
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1961,
+								1961
 							]
 						],
 						"settings":
@@ -167,7 +307,65 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.y": 1311.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/EditableSurface.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4782,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1069,
+								1069
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 123.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/ParticleEngine.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4,
+								4
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

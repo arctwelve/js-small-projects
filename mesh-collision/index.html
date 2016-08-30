@@ -17,16 +17,16 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
     <script src="js/controls/KeyboardControls.js"></script>
+    <script src="js/ParticleEngine.js"></script>
     <script src="js/Particle.js"></script>
     <script src="js/EditableSurface.js"></script>
     <script src="js/SkyBox.js"></script>
     <script>
+
     var renderer, scene, camera;
-    var particles, surface, controls;
+    var particleEngine, surface, controls;
 
     var mouse = new THREE.Vector2();
-
-
 
     function init() {
 
@@ -39,74 +39,40 @@
         document.body.appendChild(renderer.domElement);
 
         scene = new THREE.Scene();
-
         camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.5, 3000000);
         camera.position.set(0, 750, 2000);
 
-
-        // SURFACE
         surface = new EditableSurface();
         scene.add(surface);
 
-
-        // LIGHTS
         scene.add(new THREE.AmbientLight(0x444444));
         var light = new THREE.DirectionalLight(0xffffbb, 1);
         light.position.set(1, 1, 1);
         scene.add(light);
 
+        particleEngine = new ParticleEngine(scene, 100);
 
-        // SKYBOX
         scene.add(new SkyBox());
-
-        createParticles(0);
 
         controls = new THREE.KeyboardControls(document, camera);
     }
 
 
-
     function render() {
 
-        for (var j = 0; j < particles.length; j++) {
-            particles[j].update();
-        }
-
         controls.update();
+        particleEngine.update();
+
         surface.respondToMouseLocation(mouse, camera)
         renderer.render(scene, camera);
         requestAnimationFrame(render);
     }
 
 
-    function createParticles(n) {
-
-        particles = [];
-        for (var j = 0; j < n; j++) {
-            var p = new Particle(new THREE.Vector3(), {
-                mass: 1,
-                radius: 3,
-                color: 0xffff * Math.random()
-            });
-
-            p.addForce(new THREE.Vector3(
-                Math.random(),
-                Math.random() * 400,
-                Math.random()
-            ));
-
-            particles.push(p);
-            scene.add(p);
-        }
-    }
-
-
-
     window.onload = function() {
         init();
         render();
     }
-
 
 
     function onMouseMove(event) {
@@ -117,8 +83,8 @@
 
 
     window.addEventListener('mousemove', onMouseMove, false);
+
+
     </script>
 </body>
-
 </html>
-
