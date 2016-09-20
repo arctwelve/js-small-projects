@@ -12,21 +12,23 @@ html, body {
 
 
 #control-panel {
+
     position: absolute;
     top: 0;
     left: 0;
+
     height: 100%;
 }
 
 
+#control-panel-header {
 
+    width: 400px;
+    height:40px;
 
-
-#panel-header-img {
-
-    width: 100%;
-    height: 55px;
-    background-color: #cccccc;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(/img/panel-header.png);
 }
 
 
@@ -36,47 +38,9 @@ html, body {
     box-sizing: border-box;
 
     width: 400px;
-    height: 100%;
-    min-height: 500px;
+    height: calc(100% - 40px);
 
     border-style: solid;
-    border-width: 30px;
-    border-image: url(/img/panel-background.png) stretch fill 30;
+    border-width: 20px;
+    border-image: url(/img/panel-background.png) fill 25;
 }
-
-
-
-/*
-#controls-tab {
-    position: inherit;
-    left: 400px;
-    height: 30px;
-    width: 30px;
-    background-color: #666666;
-
-    font-size:.8em;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 30px;
-}
-
-#controls-tab:hover {
-    color: aqua;
-}
-
-*/
-
-/*
-#control-panel {
-    font-family: 'Bungee';
-    text-align: center;
-    position: absolute;
-    top 0;
-    left:0;
-    width:400px;
-    height: 100%;
-    background: -webkit-linear-gradient(-90deg, rgba(145,140,140,1) 0, rgba(81,81,81,1) 100%);
-    background: -moz-linear-gradient(180deg, rgba(145,140,140,1) 0, rgba(81,81,81,1) 100%);
-    background: linear-gradient(180deg, rgba(145,140,140,1) 0, rgba(81,81,81,1) 100%);
-}
-*/
