@@ -5,15 +5,10 @@
  * Main application object for the L-Systems Explorer.
  * Instantiated on window.onload
  */
-var App = function () {
+var Application = function () {
     var controlPanel = new ControlPanel();
+    var canvas = new DrawingCanvas();
 }
 
 
-
-
-
-
-
-
-window.onload = new App();
+window.onload = new Application();

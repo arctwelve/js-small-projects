@@ -1,13 +1,7 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    background-color: #000;
-}
-
+/*
+ * CSS styles for the sliding drawer control panel.
+ *
+ */
 #control-panel {
     position: absolute;
     top: 0;
@@ -49,21 +43,12 @@ body {
     color: rgba(0, 0, 0, 0.54);
 }
 
-i.vert {
+i.vert-align {
     height: 35px;
     line-height: 35px;
     vertical-align: middle;
 }
 
-i.vert:hover {
+i.vert-align:hover {
     color: #6699cc
-}
-
-.no-select {
-    cursor: default;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
