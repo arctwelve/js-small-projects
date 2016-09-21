@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    transition: left .4s ease-in-out .1s;
+    transition: left .4s ease-in-out .2s;
 }
 
 #control-panel-header {
@@ -57,4 +57,13 @@ i.vert {
 
 i.vert:hover {
     color: #6699cc
+}
+
+.no-select {
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
